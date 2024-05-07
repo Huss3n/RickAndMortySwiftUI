@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct CustomTabView: View {
     @Environment(\.dismiss) var dismiss
     
@@ -14,23 +15,18 @@ struct CustomTabView: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Image(systemName: "person.3.sequence")
+                    Label("Characters", systemImage: "person.3.fill")
                 }
             
             EpisodeView()
                 .tabItem {
-                    Image(systemName: "tv")
-                        .onTapGesture {
-                            dismiss()
-                        }
+                    Label("Episodes", systemImage: "tv")
+                       
                 }
             
             LocationView()
                 .tabItem {
-                    Image(systemName: "globe")
-                        .onTapGesture {
-                            dismiss()
-                        }
+                    Label("Locations", systemImage: "globe")
                 }
         }
     }
